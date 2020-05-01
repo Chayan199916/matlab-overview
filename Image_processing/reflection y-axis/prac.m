@@ -1,0 +1,15 @@
+clc;
+clear;
+close all;
+file1 = input('Enter image name : ', 's');
+im = imread(file1);
+[r, c, d] = size(im);
+y = im;
+y(r+1:2*r, 1:c, 1:d) = im(r:-1:1, 1:c, 1:d);
+imshow(y);
+imwrite(y, 'prac1.jpg');
+[r, c, d] = size(y);
+z = y;
+z(1:r, c+1:2*c, 1:d) = y(1:r, c:-1:1, 1:d);
+imshow(z);
+imwrite(z, 'prac2.jpg');
